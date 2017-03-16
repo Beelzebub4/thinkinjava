@@ -16,18 +16,21 @@ public class TerminationCondition {
         public Book(boolean checkOut) {
             checkedOut = checkOut;
         }
-        void checkIn(){
-            checkedOut=false;
+
+        void checkIn() {
+            checkedOut = false;
         }
-        protected void finalize(){
-            if(checkedOut){
+
+        protected void finalize() {
+            if (checkedOut) {
                 System.out.println("Error:checked out");
             }
         }
     }
+
     @Test
-    public void terminationCondition(){
-        Book novel=new Book(true);
+    public void terminationCondition() {
+        Book novel = new Book(true);
         novel.checkIn();
         new Book(true);
         System.gc();//用于强制终结动作
