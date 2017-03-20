@@ -1,4 +1,4 @@
-package chapter6;
+package chapter7;
 
 /**
  * 太空船控制模块
